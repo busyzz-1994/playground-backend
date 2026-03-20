@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Node.js + Prisma + PostgreSQL project",
   "main": "dist/index.js",
+  "packageManager": "pnpm@10.14.0",
   "scripts": {
     "dev": "nodemon --exec ts-node src/index.ts --ext ts",
     "build": "prisma generate && tsc",

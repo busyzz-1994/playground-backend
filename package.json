@@ -18,16 +18,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/bcryptjs": "^3.0.0",
-    "@types/cookie-parser": "^1.4.10",
-    "@types/express": "^5.0.6",
-    "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^25.5.0",
-    "@types/pg": "^8.18.0",
     "nodemon": "^3.1.14",
-    "prisma": "^7.5.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "ts-node": "^10.9.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -38,12 +30,20 @@
   "dependencies": {
     "@prisma/client": "^7.5.0",
     "@prisma/adapter-pg": "^7.5.0",
+    "@types/bcryptjs": "^3.0.0",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.5.0",
+    "@types/pg": "^8.18.0",
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.20.0",
+    "prisma": "^7.5.0",
+    "typescript": "^5.9.3",
     "zod": "^4.3.6"
   }
 }

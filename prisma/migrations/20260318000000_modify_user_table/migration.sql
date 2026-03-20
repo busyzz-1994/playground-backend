@@ -1,0 +1,12 @@
+-- 清空旧数据以允许结构变更
+TRUNCATE TABLE "User" CASCADE;
+
+-- 删除旧字段
+ALTER TABLE "User" DROP COLUMN IF EXISTS "name";
+ALTER TABLE "User" DROP COLUMN IF EXISTS "age";
+ALTER TABLE "User" DROP COLUMN IF EXISTS "createdAt";
+ALTER TABLE "User" DROP COLUMN IF EXISTS "updatedAt";
+
+-- 添加新字段
+ALTER TABLE "User" ADD COLUMN "user_name" TEXT NOT NULL;
+ALTER TABLE "User" ADD COLUMN "password" TEXT NOT NULL;

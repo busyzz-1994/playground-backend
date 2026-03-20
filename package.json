@@ -1,0 +1,48 @@
+{
+  "name": "prisma-node",
+  "version": "1.0.0",
+  "description": "Node.js + Prisma + PostgreSQL project",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/index.ts --ext ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "db:migrate": "prisma migrate dev",
+    "db:generate": "prisma generate",
+    "db:update": "prisma migrate dev && prisma generate",
+    "db:studio": "prisma studio",
+    "db:push": "prisma db push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@prisma/client": "^7.5.0",
+    "@types/bcryptjs": "^3.0.0",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.5.0",
+    "@types/pg": "^8.18.0",
+    "nodemon": "^3.1.14",
+    "prisma": "^7.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/engines",
+      "prisma"
+    ]
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.5.0",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.20.0",
+    "zod": "^4.3.6"
+  }
+}

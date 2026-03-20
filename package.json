@@ -6,7 +6,7 @@
   "packageManager": "pnpm@10.14.0",
   "scripts": {
     "dev": "nodemon --exec ts-node src/index.ts --ext ts",
-    "build": "prisma generate && tsc",
+    "build": "prisma generate && tsc && cp -r src/generated dist/generated",
     "postinstall": "prisma generate",
     "start": "node dist/index.js",
     "db:migrate": "prisma migrate dev",

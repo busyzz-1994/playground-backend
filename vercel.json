@@ -1,23 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "src/index.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": [
-          "src/generated/prisma/**",
-          "node_modules/@prisma/client/runtime/**",
-          "node_modules/@prisma/adapter-pg/**",
-          "prisma/schema.prisma"
-        ]
-      }
+  "functions": {
+    "src/index.ts": {
+      "includeFiles": "src/generated/prisma/**"
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "src/index.ts"
+      "source": "/(.*)",
+      "destination": "src/index.ts"
     }
   ]
 }

@@ -26,7 +26,10 @@
     "onlyBuiltDependencies": [
       "@prisma/engines",
       "prisma"
-    ]
+    ],
+    "overrides": {
+      "@types/express-serve-static-core": "^5.0.0"
+    }
   },
   "dependencies": {
     "@prisma/client": "^7.5.0",
@@ -34,6 +37,7 @@
     "@types/bcryptjs": "^3.0.0",
     "@types/cookie-parser": "^1.4.10",
     "@types/express": "^5.0.6",
+    "@types/express-serve-static-core": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.5.0",
     "@types/pg": "^8.18.0",

@@ -11,6 +11,9 @@ importers:
       '@prisma/adapter-pg':
         specifier: ^7.5.0
         version: 7.5.0
+      '@prisma/client':
+        specifier: ^7.5.0
+        version: 7.5.0(prisma@7.5.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3))(typescript@5.9.3)
       bcryptjs:
         specifier: ^3.0.3
         version: 3.0.3
@@ -33,9 +36,6 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
-      '@prisma/client':
-        specifier: ^7.5.0
-        version: 7.5.0(prisma@7.5.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3))(typescript@5.9.3)
       '@types/bcryptjs':
         specifier: ^3.0.0
         version: 3.0.0

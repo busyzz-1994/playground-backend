@@ -20,3 +20,9 @@ export const loginSchema = z.object({
 });
 
 export type LoginInput = z.infer<typeof loginSchema>;
+
+export const updateMeSchema = z.object({
+  avatarUrl: z.string().url("头像 URL 格式不正确"),
+});
+
+export type UpdateMeInput = z.infer<typeof updateMeSchema>;

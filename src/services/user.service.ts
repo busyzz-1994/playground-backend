@@ -20,7 +20,13 @@ export async function getUserList(page: number, pageSize: number) {
     prisma.user.findMany({
       skip,
       take: pageSize,
-      select: { id: true, userName: true, email: true, createdAt: true },
+      select: {
+        id: true,
+        userName: true,
+        email: true,
+        avatarUrl: true,
+        createdAt: true,
+      },
       orderBy: { createdAt: "desc" },
     }),
     prisma.user.count(),
@@ -34,6 +40,33 @@ export async function getUserList(page: number, pageSize: number) {
   };
 }
 
+export async function findUserById(id: number) {
+  return prisma.user.findUnique({
+    where: { id },
+    select: {
+      id: true,
+      userName: true,
+      email: true,
+      avatarUrl: true,
+      createdAt: true,
+    },
+  });
+}
+
+export async function updateUserAvatarUrl(id: number, avatarUrl: string) {
+  return prisma.user.update({
+    where: { id },
+    data: { avatarUrl },
+    select: {
+      id: true,
+      userName: true,
+      email: true,
+      avatarUrl: true,
+      createdAt: true,
+    },
+  });
+}
+
 export async function createUser(input: RegisterInput) {
   const hashedPassword = await bcrypt.hash(input.password, 10);
   return prisma.user.create({
@@ -42,6 +75,12 @@ export async function createUser(input: RegisterInput) {
       password: hashedPassword,
       email: input.email,
     },
-    select: { id: true, userName: true, email: true, createdAt: true },
+    select: {
+      id: true,
+      userName: true,
+      email: true,
+      avatarUrl: true,
+      createdAt: true,
+    },
   });
 }

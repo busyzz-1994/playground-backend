@@ -15,6 +15,7 @@ model User {
   userName  String
   password  String
   email     String   @unique
+  avatarUrl String?
   createdAt DateTime @default(now())
   posts     Post[]
 }

@@ -169,13 +169,13 @@ export async function updateMe(
 
     const userId = req.user!.userId;
 
-    // 删除旧头像（如果存在且在本 Bucket 内）
+    // 删除旧头像（fire-and-forget，不阻塞响应）
     const existing = await findUserById(userId);
     if (existing?.avatarUrl?.startsWith(R2_PUBLIC_URL)) {
       const oldKey = existing.avatarUrl.replace(`${R2_PUBLIC_URL}/`, "");
-      await r2
-        .send(new DeleteObjectCommand({ Bucket: R2_BUCKET, Key: oldKey }))
-        .catch(() => {});
+      r2.send(
+        new DeleteObjectCommand({ Bucket: R2_BUCKET, Key: oldKey }),
+      ).catch(() => {});
     }
 
     const user = await updateUserAvatarUrl(userId, result.data.avatarUrl);
